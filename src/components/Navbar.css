@@ -1,0 +1,134 @@
+.navbar {
+  background: #1a1a2e;
+  padding: 0 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 90;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.navbar-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar-dropdown-wrapper {
+  position: relative;
+}
+
+.navbar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.15s;
+  border-radius: 0;
+}
+
+.navbar-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.navbar-item.active {
+  border-bottom-color: #667eea;
+  background: rgba(102, 126, 234, 0.08);
+}
+
+.navbar-item-icon {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item.active .navbar-item-icon {
+  color: #667eea;
+}
+
+.navbar-item:hover .navbar-item-icon {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-item-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-item.active .navbar-item-label {
+  color: white;
+  font-weight: 600;
+}
+
+.navbar-item:hover .navbar-item-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-chevron {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Dropdown */
+.navbar-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  min-width: 200px;
+  padding: 6px;
+  z-index: 200;
+  animation: navDropFade 0.15s ease;
+}
+
+@keyframes navDropFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 450;
+  color: #4b5563;
+  text-align: left;
+  border-radius: 6px;
+  transition: all 0.1s;
+}
+
+.navbar-dropdown-item:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.navbar-dropdown-item.active {
+  background: #f0f1ff;
+  color: #667eea;
+  font-weight: 600;
+}
